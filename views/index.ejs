@@ -1,0 +1,28 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensor Dashboard</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/refresh.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Sensor Dashboard</h1>
+    <div class="card">
+      <h2>Latest Readings</h2>
+      <div class="reading">
+        <p><strong>pH:</strong> <span id="ph"><%= reading?.ph || 'N/A' %></span> pH</p>
+        <p><strong>Nitrogen:</strong> <span id="nitrogen"><%= reading?.nitrogen || 'N/A' %></span> mg/kg</p>
+        <p><strong>Phosphorus:</strong> <span id="phosphorus"><%= reading?.phosphorus || 'N/A' %></span> mg/kg</p>
+        <p><strong>Potassium:</strong> <span id="potassium"><%= reading?.potassium || 'N/A' %></span> mg/kg</p>
+        <p><strong>Temperature:</strong> <span id="temperature"><%= reading?.temperature || 'N/A' %></span> ℃</p>
+        <p><strong>Moisture:</strong> <span id="moisture"><%= reading?.moisture || 'N/A' %></span> %</p>
+        <p><strong>Conductivity:</strong> <span id="conductivity"><%= reading?.conductivity || 'N/A' %></span> µs/cm</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
