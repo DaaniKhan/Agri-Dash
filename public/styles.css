@@ -18,13 +18,15 @@ body {
 
 .container {
   text-align: center; /* Keep the heading aligned centrally */
-  margin: 20px;
+  margin: 10px; /* Reduce margins for smaller screens */
+  width: 100%; /* Allow the container to adapt to the screen size */
+  padding: 0 10px; /* Add slight padding inside the container */
 }
 
 h1 {
   color: #333;
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .card {
@@ -32,7 +34,7 @@ h1 {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
+  max-width: 90%; /* Use most of the screen width */
   margin: auto;
   text-align: right; /* Align card content to the right */
   transition: transform 0.3s ease; /* Smooth effect for any size changes */
@@ -80,11 +82,10 @@ span {
   }
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
+/* Responsive design for better scaling */
+@media (max-width: 1200px) {
   .card {
-    max-width: 90%; /* Resize card to take most of the screen width */
-    padding: 15px; /* Adjust padding for smaller screens */
+    max-width: 80%; /* Take up more space on medium screens */
   }
 
   h1 {
@@ -92,25 +93,53 @@ span {
   }
 
   h2 {
-    font-size: 1.3rem; /* Adjust subheading size */
+    font-size: 1.4rem; /* Adjust subheading size */
   }
 
   .reading p {
-    font-size: 1rem; /* Reduce font size for better fit */
+    font-size: 1rem; /* Adjust font size for better fit */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0; /* Remove body padding for smaller screens */
+  }
+
+  .card {
+    max-width: 95%; /* Use most of the screen width */
+    padding: 15px; /* Reduce padding */
+  }
+
+  h1 {
+    font-size: 1.6rem; /* Further reduce heading size */
+  }
+
+  h2 {
+    font-size: 1.3rem; /* Further reduce subheading size */
+  }
+
+  .reading p {
+    font-size: 0.9rem; /* Reduce font size */
   }
 }
 
 @media (max-width: 480px) {
+  .card {
+    max-width: 100%; /* Fill the entire screen width */
+    padding: 10px; /* Reduce padding even more */
+  }
+
   h1 {
-    font-size: 1.5rem; /* Further reduce heading size */
+    font-size: 1.4rem; /* Further reduce heading size for smaller screens */
   }
 
   h2 {
-    font-size: 1.2rem; /* Further reduce subheading size */
+    font-size: 1.2rem; /* Adjust subheading size for small phones */
   }
 
   .reading p {
-    font-size: 0.9rem; /* Reduce font size for very small devices */
+    font-size: 0.85rem; /* Reduce font size for better fit */
     margin: 8px 0; /* Adjust spacing between lines */
   }
 }
