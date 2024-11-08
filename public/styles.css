@@ -70,34 +70,39 @@ span {
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .card {
-    max-width: 90%; /* Resize card to take most of the screen width */
-    padding: 15px; /* Adjust padding for smaller screens */
+    max-width: 95%; /* Make the card almost full-width */
+    padding: 25px; /* Slightly increase padding for a more spacious feel */
   }
 
   h1 {
-    font-size: 1.8rem; /* Adjust heading size */
+    font-size: 2rem; /* Increase heading size for better visibility */
   }
 
   h2 {
-    font-size: 1.3rem; /* Adjust subheading size */
+    font-size: 1.6rem; /* Increase subheading size */
   }
 
   .reading p {
-    font-size: 1rem; /* Reduce font size for better fit */
+    font-size: 1.2rem; /* Increase font size for better readability */
   }
 }
 
 @media (max-width: 480px) {
+  .card {
+    max-width: 98%; /* Make the card take up nearly the full screen */
+    padding: 20px; /* Keep some padding for spacing */
+  }
+
   h1 {
-    font-size: 1.5rem; /* Further reduce heading size */
+    font-size: 1.8rem; /* Maintain a reasonable heading size */
   }
 
   h2 {
-    font-size: 1.2rem; /* Further reduce subheading size */
+    font-size: 1.5rem; /* Adjust subheading size */
   }
 
   .reading p {
-    font-size: 0.9rem; /* Reduce font size for very small devices */
-    margin: 8px 0; /* Adjust spacing between lines */
+    font-size: 1.1rem; /* Keep reading text easily readable */
+    margin: 10px 0; /* Slightly increase space between lines */
   }
 }
