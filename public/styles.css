@@ -5,104 +5,156 @@
 
 body {
   font-family: 'Nastaliq', Arial, sans-serif;
-  direction: rtl; /* Ensures right-to-left layout for Urdu */
-  text-align: right; /* Align text to the right for Urdu */
+  direction: rtl;
+  text-align: right;
   background-color: #f0f4f8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .container {
-  text-align: center; /* Keep the heading aligned centrally */
-  margin: 20px;
+  text-align: center;
+  max-width: 800px; /* Slightly reduced max width to fit two cards per row */
+  padding: 20px;
 }
 
 h1 {
-  color: #333;
-  font-size: 2.8rem; /* Slightly increase heading size */
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; /* Add space between rows and columns */
 }
 
 .card {
   background-color: #ffffff;
-  padding: 40px; /* Increase padding to make the card content more spacious */
   border-radius: 10px;
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 90%; /* Adjust card width to occupy more space */
-  margin: auto;
-  text-align: right; /* Align card content to the right */
-  transition: transform 0.3s ease; /* Smooth effect for any size changes */
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px); /* Subtle hover effect for better interactivity */
+  transform: translateY(-5px);
 }
 
-h2 {
-  margin-bottom: 20px; /* Slightly increase space between subheading and content */
-  color: #333;
-  font-size: 2.2rem; /* Increase subheading size */
-  text-align: center; /* Keep the subheading centrally aligned */
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.reading p {
-  margin: 15px 0; /* Slightly increase spacing between rows */
-  font-size: 1.5rem; /* Increase font size for better readability */
+/* Individual icons for each card */
+.ph {
+  background-image: url('/icons/ph.png'); /* Replace with your actual pH icon */
+}
+
+.nitrogen {
+  background-image: url('/icons/nitrogen.png'); /* Replace with your nitrogen icon */
+}
+
+.phosphorus {
+  background-image: url('/icons/phosphorus.png'); /* Replace with your phosphorus icon */
+}
+
+.potassium {
+  background-image: url('/icons/potassium.png'); /* Replace with your potassium icon */
+}
+
+.temperature {
+  background-image: url('/icons/temperature.png'); /* Replace with your temperature icon */
+}
+
+.moisture {
+  background-image: url('/icons/moisture.png'); /* Replace with your moisture icon */
+}
+
+.conductivity {
+  background-image: url('/icons/conductivity.png'); /* Replace with your conductivity icon */
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 1.2rem;
   color: #333;
-  display: flex;
-  justify-content: space-between; /* Align label and value neatly */
-  direction: rtl; /* Ensures text flows from right to left */
-  word-spacing: 4px; /* Maintain spacing between words for readability */
 }
 
 span {
   font-weight: bold;
-  color: #0077b6; /* Keep the data value names in blue */
-  margin-left: 5px; /* Space between the value and the label */
-  word-spacing: 3px; /* Maintain spacing consistency for numbers and labels */
+  color: #0077b6;
 }
-
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; /* Adjust spacing between rows */
+  }
+
   .card {
-    max-width: 95%; /* Make the card almost full-width */
-    padding: 25px; /* Slightly increase padding for a more spacious feel */
+    max-width: 95%; /* Cards take up almost full width of the screen */
+    padding: clamp(20px, 4vw, 30px); /* Dynamically adjust padding */
   }
 
   h1 {
-    font-size: 2rem; /* Increase heading size for better visibility */
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Dynamically scale heading size */
   }
 
-  h2 {
-    font-size: 1.6rem; /* Increase subheading size */
+  h3 {
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Dynamically scale subheading size */
   }
 
-  .reading p {
-    font-size: 1.2rem; /* Increase font size for better readability */
+  p {
+    font-size: clamp(0.9rem, 2vw, 1.2rem); /* Dynamically scale reading size */
+    margin: 10px 0; /* Add consistent spacing */
+  }
+
+  .icon {
+    width: clamp(40px, 6vw, 60px); /* Dynamically adjust icon size */
+    height: clamp(40px, 6vw, 60px);
   }
 }
 
 @media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; /* Reduce gap for tighter layout */
+  }
+
   .card {
-    max-width: 98%; /* Make the card take up nearly the full screen */
-    padding: 20px; /* Keep some padding for spacing */
+    max-width: 98%; /* Cards nearly fill the screen width */
+    padding: clamp(15px, 4vw, 25px); /* Adjust padding */
   }
 
   h1 {
-    font-size: 1.8rem; /* Maintain a reasonable heading size */
+    font-size: clamp(1.5rem, 4vw, 2rem); /* Adjust heading size */
   }
 
-  h2 {
-    font-size: 1.5rem; /* Adjust subheading size */
+  h3 {
+    font-size: clamp(0.9rem, 2.2vw, 1.2rem); /* Smaller subheading for readability */
   }
 
-  .reading p {
-    font-size: 1.1rem; /* Keep reading text easily readable */
-    margin: 10px 0; /* Slightly increase space between lines */
+  p {
+    font-size: clamp(0.8rem, 1.8vw, 1.1rem); /* Adjust paragraph font size */
+    margin: 8px 0; /* Slightly smaller margin for compact design */
+  }
+
+  .icon {
+    width: clamp(30px, 5vw, 50px); /* Smaller icons for small screens */
+    height: clamp(30px, 5vw, 50px);
   }
 }

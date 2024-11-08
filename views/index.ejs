@@ -1,33 +1,4 @@
 <!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sensor Dashboard</title>
-  <link rel="stylesheet" href="/styles.css">
-  <script defer src="/refresh.js"></script>
-</head>
-<body>
-  <div class="container">
-    <h1>Sensor Dashboard</h1>
-    <div class="card">
-      <h2>Latest Readings</h2>
-      <div class="reading">
-        <p><strong>pH:</strong> <span id="ph"><%= reading?.ph || 'N/A' %></span> pH</p>
-        <p><strong>Nitrogen:</strong> <span id="nitrogen"><%= reading?.nitrogen || 'N/A' %></span> mg/kg</p>
-        <p><strong>Phosphorus:</strong> <span id="phosphorus"><%= reading?.phosphorus || 'N/A' %></span> mg/kg</p>
-        <p><strong>Potassium:</strong> <span id="potassium"><%= reading?.potassium || 'N/A' %></span> mg/kg</p>
-        <p><strong>Temperature:</strong> <span id="temperature"><%= reading?.temperature || 'N/A' %></span> ℃</p>
-        <p><strong>Moisture:</strong> <span id="moisture"><%= reading?.moisture || 'N/A' %></span> %</p>
-        <p><strong>Conductivity:</strong> <span id="conductivity"><%= reading?.conductivity || 'N/A' %></span> µs/cm</p>
-      </div>
-    </div>
-  </div>
-</body>
-</html> -->
-
-
-<!DOCTYPE html>
 <html lang="ur">
 <head>
   <meta charset="UTF-8">
@@ -49,6 +20,115 @@
         <p>درجہ حرارت (℃): <span id="temperature"><%= reading?.temperature || 'موجود نہیں' %></span></p>
         <p>نمی (%): <span id="moisture"><%= reading?.moisture || 'موجود نہیں' %></span></p>
         <p>برقی ترسیلیت (µs/cm): <span id="conductivity"><%= reading?.conductivity || 'موجود نہیں' %></span></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سمارٹ ایکوا کلچر ڈیش بورڈ</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>سمارٹ ایکوا کلچر ڈیش بورڈ</h1>
+
+    
+    <div class="grid">
+      <div class="card">
+        <div class="icon ph"></div>
+        <h3>پی ایچ</h3>
+        <p><span id="ph">4.7</span></p>
+      </div>
+      <div class="card">
+        <div class="icon nitrogen"></div>
+        <h3>نائٹروجن</h3>
+        <p><span id="nitrogen">15</span> ملی گرام/کلوگرام</p>
+      </div>
+      <div class="card">
+        <div class="icon phosphorus"></div>
+        <h3>فاسفورس</h3>
+        <p><span id="phosphorus">82</span> ملی گرام/کلوگرام</p>
+      </div>
+      <div class="card">
+        <div class="icon potassium"></div>
+        <h3>پوٹاشیم</h3>
+        <p><span id="potassium">74</span> ملی گرام/کلوگرام</p>
+      </div>
+      <div class="card">
+        <div class="icon temperature"></div>
+        <h3>درجہ حرارت</h3>
+        <p><span id="temperature">22.5</span> ℃</p>
+      </div>
+      <div class="card">
+        <div class="icon moisture"></div>
+        <h3>نمی</h3>
+        <p><span id="moisture">26.5</span> %</p>
+      </div>
+      <div class="card">
+        <div class="icon conductivity"></div>
+        <h3>برقی ترسیلیت</h3>
+        <p><span id="conductivity">259</span> µs/cm</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سمارٹ ایکوا کلچر ڈیش بورڈ</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/refresh.js"></script> <!-- Add dynamic data script -->
+</head>
+<body>
+  <div class="container">
+    <h1>سینسر ڈیش بورڈ</h1>
+
+    <!-- Value Cards -->
+    <div class="grid">
+      <div class="card">
+        <div class="icon ph"></div>
+        <h3>پی ایچ</h3>
+        <p><span id="ph">N/A</span></p>
+      </div>
+      <div class="card">
+        <div class="icon nitrogen"></div>
+        <h3>نائٹروجن</h3>
+        <p><span id="nitrogen">N/A</span> ملی گرام/کلوگرام</p>
+      </div>
+      <div class="card">
+        <div class="icon phosphorus"></div>
+        <h3>فاسفورس</h3>
+        <p><span id="phosphorus">N/A</span> ملی گرام/کلوگرام</p>
+      </div>
+      <div class="card">
+        <div class="icon potassium"></div>
+        <h3>پوٹاشیم</h3>
+        <p><span id="potassium">N/A</span> ملی گرام/کلوگرام</p>
+      </div>
+      <div class="card">
+        <div class="icon temperature"></div>
+        <h3>درجہ حرارت</h3>
+        <p><span id="temperature">N/A</span> ℃</p>
+      </div>
+      <div class="card">
+        <div class="icon moisture"></div>
+        <h3>نمی</h3>
+        <p><span id="moisture">N/A</span> %</p>
+      </div>
+      <div class="card">
+        <div class="icon conductivity"></div>
+        <h3>برقی ترسیلیت</h3>
+        <p><span id="conductivity">N/A</span> µs/cm</p>
       </div>
     </div>
   </div>
