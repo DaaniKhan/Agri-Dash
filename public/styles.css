@@ -23,16 +23,16 @@ body {
 
 h1 {
   color: #333;
-  font-size: 2.5rem; /* Increase heading size */
+  font-size: 2.8rem; /* Slightly increase heading size */
   margin-bottom: 20px;
 }
 
 .card {
   background-color: #ffffff;
-  padding: 30px; /* Increased padding */
+  padding: 40px; /* Increase padding to make the card content more spacious */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 600px; /* Increase card size */
+  max-width: 90%; /* Adjust card width to occupy more space */
   margin: auto;
   text-align: right; /* Align card content to the right */
   transition: transform 0.3s ease; /* Smooth effect for any size changes */
@@ -45,13 +45,13 @@ h1 {
 h2 {
   margin-bottom: 20px; /* Slightly increase space between subheading and content */
   color: #333;
-  font-size: 2rem; /* Increase subheading size */
+  font-size: 2.2rem; /* Increase subheading size */
   text-align: center; /* Keep the subheading centrally aligned */
 }
 
 .reading p {
   margin: 15px 0; /* Slightly increase spacing between rows */
-  font-size: 1.4rem; /* Increase font size for better readability */
+  font-size: 1.5rem; /* Increase font size for better readability */
   color: #333;
   display: flex;
   justify-content: space-between; /* Align label and value neatly */
@@ -65,6 +65,7 @@ span {
   margin-left: 5px; /* Space between the value and the label */
   word-spacing: 3px; /* Maintain spacing consistency for numbers and labels */
 }
+
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
