@@ -101,7 +101,7 @@ span {
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(2, 1fr); 
     gap: 15px; /* Adjust spacing between rows */
   }
 
@@ -131,7 +131,7 @@ span {
 
 @media (max-width: 480px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(2, 1fr); 
     gap: 10px; /* Reduce gap for tighter layout */
   }
 
