@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.getElementById("conductivity").textContent = data.conductivity || 'N/A';
 
           console.log(`Data successfully updated at ${new Date().toLocaleTimeString()}`);
-          console.log(`Data: ${data}`)
+          console.log(data)
         }
       } catch (error) {
         console.error("Error fetching latest reading:", error);

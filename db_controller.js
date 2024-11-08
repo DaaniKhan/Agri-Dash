@@ -1,4 +1,3 @@
-// readingService.js
 import pool from './db.js';
 
 // Get the latest reading record for a specific user

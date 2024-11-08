@@ -1,5 +1,4 @@
-<!-- views/index.ejs -->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -21,6 +20,35 @@
         <p><strong>Temperature:</strong> <span id="temperature"><%= reading?.temperature || 'N/A' %></span> ℃</p>
         <p><strong>Moisture:</strong> <span id="moisture"><%= reading?.moisture || 'N/A' %></span> %</p>
         <p><strong>Conductivity:</strong> <span id="conductivity"><%= reading?.conductivity || 'N/A' %></span> µs/cm</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سینسر ڈیش بورڈ</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/refresh.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>سینسر ڈیش بورڈ</h1>
+    <div class="card">
+      <h2>تازہ ترین ڈیٹا</h2>
+      <div class="reading">
+        <p>پی ایچ: <span id="ph"><%= reading?.ph || 'موجود نہیں' %></span></p>
+        <p>نائٹروجن (ملی گرام/کلوگرام): <span id="nitrogen"><%= reading?.nitrogen || 'موجود نہیں' %></span></p>
+        <p>فاسفورس (ملی گرام/کلوگرام): <span id="phosphorus"><%= reading?.phosphorus || 'موجود نہیں' %></span></p>
+        <p>پوٹاشیم (ملی گرام/کلوگرام): <span id="potassium"><%= reading?.potassium || 'موجود نہیں' %></span></p>
+        <p>درجہ حرارت (℃): <span id="temperature"><%= reading?.temperature || 'موجود نہیں' %></span></p>
+        <p>نمی (%): <span id="moisture"><%= reading?.moisture || 'موجود نہیں' %></span></p>
+        <p>برقی ترسیلیت (µs/cm): <span id="conductivity"><%= reading?.conductivity || 'موجود نہیں' %></span></p>
       </div>
     </div>
   </div>

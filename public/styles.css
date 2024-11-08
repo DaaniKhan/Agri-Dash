@@ -1,50 +1,116 @@
-/* public/styles.css */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+@font-face {
+  font-family: 'Nastaliq';
+  src: url('/fonts/JameelNooriNastaleeqRegular.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Nastaliq', Arial, sans-serif;
+  direction: rtl; /* Ensures right-to-left layout for Urdu */
+  text-align: right; /* Align text to the right for Urdu */
+  background-color: #f0f4f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  text-align: center; /* Keep the heading aligned centrally */
+  margin: 20px;
+}
+
+h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: auto;
+  text-align: right; /* Align card content to the right */
+  transition: transform 0.3s ease; /* Smooth effect for any size changes */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Subtle hover effect for better interactivity */
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.5rem;
+  text-align: center; /* Keep the subheading centrally aligned */
+}
+
+.reading p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #333;
+  display: flex;
+  justify-content: space-between; /* Align label and value neatly */
+  direction: rtl; /* Ensures text flows from right to left */
+  word-spacing: 4px; /* Increase spacing between words for readability */
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards; /* Smooth transition when new data comes */
+}
+
+span {
+  font-weight: bold;
+  color: #0077b6;
+  margin-left: 5px; /* Space between the value and the label */
+  word-spacing: 3px; /* Maintain spacing consistency for numbers and labels */
+}
+
+/* Smooth transition effect for dynamic updates */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Start slightly lower */
   }
-  
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #f0f4f8;
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
   }
-  
-  .container {
-    text-align: center;
-    margin: 20px;
-  }
-  
-  h1 {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
   .card {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    margin: auto;
+    max-width: 90%; /* Resize card to take most of the screen width */
+    padding: 15px; /* Adjust padding for smaller screens */
   }
-  
+
+  h1 {
+    font-size: 1.8rem; /* Adjust heading size */
+  }
+
   h2 {
-    margin-bottom: 10px;
-    color: #0077b6;
+    font-size: 1.3rem; /* Adjust subheading size */
   }
-  
+
   .reading p {
-    margin: 10px 0;
-    font-size: 1.1rem;
-    color: #333;
+    font-size: 1rem; /* Reduce font size for better fit */
   }
-  
-  strong {
-    color: #0077b6;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem; /* Further reduce heading size */
   }
-  
+
+  h2 {
+    font-size: 1.2rem; /* Further reduce subheading size */
+  }
+
+  .reading p {
+    font-size: 0.9rem; /* Reduce font size for very small devices */
+    margin: 8px 0; /* Adjust spacing between lines */
+  }
+}
