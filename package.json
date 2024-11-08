@@ -1,4 +1,8 @@
 {
+  "name": "agri-dash",
+  "version": "1.0.0",
+  "description": "A sensor dashboard app with Node.js, Express, EJS, and PostgreSQL",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
