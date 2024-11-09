@@ -1,5 +1,11 @@
 // public/refresh.js
 document.addEventListener("DOMContentLoaded", () => {
+
+    let startTime;
+
+    // Record the time the user enters the dashboard
+    startTime = Date.now();
+
     const fetchLatestReading = async () => {
       try {
         const response = await fetch('/api/latest-reading/2'); // Replace `1` with dynamic user_id as needed
@@ -25,4 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fetch data initially and then every 30 minutes (1800000 milliseconds)
     fetchLatestReading();
     setInterval(fetchLatestReading, 1800000);
-  });  
+
+    // Record the time the user leaves the dashboard
+    window.addEventListener('beforeunload', () => {
+      const endTime = Date.now();
+      const timeSpent = Math.round((endTime - startTime) / 1000); // Time in seconds
+      
+      const payload = new Blob([JSON.stringify({ timeSpent })], { type: 'application/json' });
+      navigator.sendBeacon('/api/log-time', payload);
+    });
+  });
