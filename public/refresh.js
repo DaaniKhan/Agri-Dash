@@ -24,5 +24,5 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Fetch data initially and then every 30 minutes (1800000 milliseconds)
     fetchLatestReading();
-    setInterval(fetchLatestReading, 60000);
+    setInterval(fetchLatestReading, 1800000);
   });  
