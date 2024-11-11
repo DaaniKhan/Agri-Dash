@@ -109,11 +109,18 @@ document.addEventListener("DOMContentLoaded", () => {
           responsive: true,
           scales: {
             x: {
-              title: { display: true, text: "تاریخ" }, // "Date" in Urdu
+              title: {
+                display: true,
+                text: "تاریخ", // "Date" in Urdu
+                padding: {
+                  top: 10, // Add space between the title and the labels
+                },
+              },
               ticks: {
                 font: { size: 12 }, // Adjust font size for better readability
                 maxRotation: 0, // Prevent label rotation
                 autoSkip: true, // Skip overlapping labels
+                padding: 10, // Add space between the x-axis labels and the axis
               },
             },
             y: {
