@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           // Update the reading time
           const rawTime = data.created_at;
-          const localTime = rawTime ? formatToLocalTimeWithOffset(rawTime, 5) : 'N/A';
+          const localTime = rawTime ? formatToLocalTime(rawTime) : 'N/A';
           document.getElementById("reading-time").textContent = `${localTime}`;
 
           console.log(`Data successfully updated at ${new Date().toLocaleTimeString()}`);
@@ -27,11 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    const formatToLocalTimeWithOffset = (isoString, offsetHours = 5) => {
+    const formatToLocalTime = (isoString) => {
       const date = new Date(isoString);
-    
-      // Add 5 hours (offset) to the timestamp
-      date.setHours(date.getHours() + offsetHours);
     
       // Format the updated time
       return date.toLocaleTimeString('en-US', {
