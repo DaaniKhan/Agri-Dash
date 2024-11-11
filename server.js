@@ -1,7 +1,7 @@
 // server.js
 import express from 'express';
 import path from 'path';
-import { getLatestReadingByUserID } from './db_controller.js';
+import { getLatestReadingByUserID, getReadingsFromID } from './db_controller.js';
 import dotenv from 'dotenv';
 import pool from './db.js';
 
@@ -55,6 +55,18 @@ app.get('/api/latest-reading/:user_id', async (req, res) => {
     }
   } catch (error) {
     res.status(500).json({ message: 'Server Error' });
+  }
+});
+
+app.get('/api/readings/:user_id', async (req, res) => {
+  const { user_id } = req.params;
+
+  try {
+    const readings = await getReadingsFromID(user_id, 650); // Fetch all readings for the user
+    res.json(readings);
+  } catch (error) {
+    console.error('Error fetching all readings:', error);
+    res.status(500).json({ message: 'Server error' });
   }
 });
 
