@@ -14,12 +14,31 @@ document.addEventListener("DOMContentLoaded", () => {
           document.getElementById("moisture").textContent = data.moisture || 'N/A';
           document.getElementById("conductivity").textContent = data.conductivity || 'N/A';
 
+          // Update the reading time
+          const rawTime = data.created_at;
+          const localTime = rawTime ? formatToLocalTimeWithOffset(rawTime, 5) : 'N/A';
+          document.getElementById("reading-time").textContent = `${localTime}`;
+
           console.log(`Data successfully updated at ${new Date().toLocaleTimeString()}`);
           console.log(data)
         }
       } catch (error) {
         console.error("Error fetching latest reading:", error);
       }
+    };
+
+    const formatToLocalTimeWithOffset = (isoString, offsetHours = 5) => {
+      const date = new Date(isoString);
+    
+      // Add 5 hours (offset) to the timestamp
+      date.setHours(date.getHours() + offsetHours);
+    
+      // Format the updated time
+      return date.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+      });
     };
   
     // Fetch data initially and then every 30 minutes (1800000 milliseconds)

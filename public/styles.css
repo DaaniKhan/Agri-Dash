@@ -98,6 +98,15 @@ span {
   color: #0077b6;
 }
 
+.reading-time {
+  direction: ltr;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #555; /* Slightly muted color */
+  text-align: center; /* Center alignment */
+  font-weight: bold;
+}
+
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .grid {
