@@ -107,28 +107,7 @@ span {
   font-weight: bold;
 }
 
-/* Graph Container */
-#graph-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto; /* Center the graph container */
-  padding: 20px;
-  background-color: #f9f9f9; /* Light background for the graph */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-canvas {
-  width: 100% !important;
-  height: 400px !important;
-}
-
-/* Graph Labels */
-.chartjs-render-monitor {
-  font-family: Arial, sans-serif;
-  font-size: 0.9rem;
-  direction: rtl; /* Keep Urdu text right-aligned */
-}
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
