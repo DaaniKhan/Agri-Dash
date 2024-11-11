@@ -69,20 +69,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    // Function to render the graph, ignoring zero values
     const renderGraph = (data, type) => {
       // Filter out readings with zero values for the selected type
       const filteredData = data.filter((reading) => reading[type] !== 0);
-
-      const labels = filteredData.map((reading) =>
-        new Date(reading.created_at).toLocaleString("en-GB")
-      ); // Convert timestamps to a readable format
-      const values = filteredData.map((reading) => reading[type]);
-
+    
+      const labels = filteredData.map((reading) => {
+        const date = new Date(reading.created_at);
+        return date.toLocaleDateString("en-GB", {
+          day: "2-digit",
+          month: "2-digit",
+        }); // Example: "11/11"
+      });
+    
+      const values = filteredData.map((reading) =>
+        parseFloat(reading[type].toFixed(2)) // Round values to 2 decimals
+      );
+    
       if (chartInstance) {
         chartInstance.destroy(); // Destroy the previous chart to avoid duplication
       }
-
+    
       chartInstance = new Chart(graphCanvas, {
         type: "line",
         data: {
@@ -102,13 +108,23 @@ document.addEventListener("DOMContentLoaded", () => {
         options: {
           responsive: true,
           scales: {
-            x: { title: { display: true, text: "وقت" } },
-            y: { title: { display: true, text: urduLabels[type] || type } },
+            x: {
+              title: { display: true, text: "تاریخ" }, // "Date" in Urdu
+              ticks: {
+                font: { size: 12 }, // Adjust font size for better readability
+                maxRotation: 0, // Prevent label rotation
+                autoSkip: true, // Skip overlapping labels
+              },
+            },
+            y: {
+              title: { display: true, text: urduLabels[type] || type },
+              ticks: { font: { size: 12 } },
+            },
           },
         },
       });
     };
-
+    
     // Add event listeners to all cards
     const cards = document.querySelectorAll(".card");
     cards.forEach((card) => {
