@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const fetchLatestReading = async () => {
       try {
-        const response = await fetch('/api/latest-reading/1'); // Replace `1` with dynamic user_id as needed
+        const response = await fetch('/api/latest-reading/2'); // Replace `1` with dynamic user_id as needed
         const data = await response.json();
   
         if (response.ok && data) {
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         event.stopPropagation(); // Prevent event from propagating to the body
 
         const type = card.getAttribute("data-type"); // Get the type of reading (e.g., 'ph', 'nitrogen')
-        const readings = await fetchReadings(1); // Replace `2` with the dynamic user ID
+        const readings = await fetchReadings(2); // Replace `2` with the dynamic user ID
         renderGraph(readings, type);
 
         // Show the graph container

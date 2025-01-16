@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 // Render the dashboard
 app.get('/', async (req, res) => {
   try {
-    const latestReading = await getLatestReadingByUserID(1); // Use any sample user_id for testing
+    const latestReading = await getLatestReadingByUserID(2); // Use any sample user_id for testing
     res.render('index', { reading: latestReading });
   } catch (error) {
     res.status(500).send('Error loading dashboard');
