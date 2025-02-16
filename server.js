@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 // Render the dashboard
 app.get('/', async (req, res) => {
   try {
-    const latestReading = await getLatestReadingByUserID(2); // Use any sample user_id for testing
+    const latestReading = await getLatestReadingByUserID(1); // Use any sample user_id for testing
     res.render('index', { reading: latestReading });
   } catch (error) {
     res.status(500).send('Error loading dashboard');
@@ -62,7 +62,7 @@ app.get('/api/readings/:user_id', async (req, res) => {
   const { user_id } = req.params;
 
   try {
-    const readings = await getReadingsFromID(user_id, 650); // Fetch all readings for the user
+    const readings = await getReadingsFromID(user_id, 10); // Fetch all readings for the user
     res.json(readings);
   } catch (error) {
     console.error('Error fetching all readings:', error);
