@@ -1,6 +1,6 @@
 # 📊 Kissan Dost – Live IoT Sensor Dashboard
 
-This web-based dashboard displays **live sensor readings** every 30 minutes using PostgreSQL data from IoT devices deployed in the field. It is a real-time companion to the [Kissan Dost ecosystem](https://github.com/yourusername/kissan-dost), offering intuitive visualizations for farmers and researchers.
+This web-based dashboard displays **live sensor readings** every 30 minutes using PostgreSQL data from IoT devices deployed in the field. It is a real-time companion to the Kissan Dost ecosystem, offering intuitive visualizations for farmers and researchers.
 
 ---
 
@@ -92,4 +92,4 @@ http://localhost:3000
 
 ## 🙌 Credits
 
-- 💡 Built as part of the **Kissan-Dost** ecosystem.
+- 💡 Built as part of the **Kissan-Dost** ecosystem. ([`Kissan Dost`](https://github.com/Saad4858/Pandas)), (['Agri-Chat'](https://github.com/DaaniKhan/Agri-Chat))
